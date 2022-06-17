@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <h1 style="color: white;">Employee managament system</h1>
     <div class="d-flex">
-      <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="btn btn-success">Add Employee</button>
+      <button (click)="clickAddEmployee()" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="btn btn-success">Add Employee</button>
     </div>
   </div>
 </nav>
@@ -21,16 +21,17 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>1</td>
-      <td>Nikhil</td>
-      <td>Vinnakota</td>
-      <td>Nikhilvinnakota@gmail.com</td>
-      <td>8074467456</td>
-      <td>$ 120,000</td>
+    <tr *ngFor="let row of employeeData">
+      <td>{{row.id}}</td>
+      <td>{{row.firstName}}</td>
+      <td>{{row.lastName}}</td>
+      <td>{{row.email}}</td>
+      <td>{{row.mobile}}</td>
+      <td>{{row.salary}}</td>
+
       <td>
-        <button class="btn btn-info">Edit</button>
-        <button class="btn btn-danger mx-3">Delete</button>
+        <button (click)="onEdit(row)" class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Edit</button>
+        <button (click)="deleteEmployee(row)" class="btn btn-danger mx-3">Delete</button>
       </td>
     </tr>
   </tbody>
@@ -78,8 +79,9 @@
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Add</button>
+        <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" *ngIf="showAdd" (click)="postEmployeeDetails()" class="btn btn-primary">Add</button>
+        <button type="button" *ngIf="showUpdate" (click)="updateEmployeeDetails()" class="btn btn-primary">Update</button>
       </div>
     </div>
   </div>

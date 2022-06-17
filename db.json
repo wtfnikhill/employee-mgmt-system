@@ -1,18 +1,23 @@
 {
   "posts": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "id": 2,
+      "firstName": "Alex",
+      "lastName": "Martin",
+      "email": "alexmartin@gmail.com",
+      "mobile": "91000119888",
+      "salary": "50,000"
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": 4,
+      "firstName": "david",
+      "lastName": "warner",
+      "email": "warner@gmail.com",
+      "mobile": "4672728829",
+      "salary": "111,000"
     }
   ],
+  "comments": [],
   "profile": {
     "name": "typicode"
   }
