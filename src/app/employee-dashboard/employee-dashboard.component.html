@@ -1,0 +1,86 @@
+<nav class="navbar navbar-light bg-primary">
+  <div class="container-fluid">
+    <h1 style="color: white;">Employee managament system</h1>
+    <div class="d-flex">
+      <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="btn btn-success">Add Employee</button>
+    </div>
+  </div>
+</nav>
+
+
+<table class="table mt-3">
+  <thead>
+    <tr>
+      <th scope = "col">Employee ID</th>
+      <th scope = "col">First Name</th>
+      <th scope = "col">Last Name</th>
+      <th scope = "col">Email ID</th>
+      <th scope = "col">Mobile No.</th>
+      <th scope = "col">Salary</th>
+      <th scope = "col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Nikhil</td>
+      <td>Vinnakota</td>
+      <td>Nikhilvinnakota@gmail.com</td>
+      <td>8074467456</td>
+      <td>$ 120,000</td>
+      <td>
+        <button class="btn btn-info">Edit</button>
+        <button class="btn btn-danger mx-3">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Launch static backdrop modal
+</button> -->
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Employee Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <form [formGroup]="formValue">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">First Name</label>
+            <input type="text" formControlName="firstName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Last Name</label>
+            <input type="text" formControlName="lastName" class="form-control" id="exampleInputPassword1">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Email ID</label>
+            <input type="text" formControlName="email" class="form-control" id="exampleInputPassword1">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Mobile number</label>
+            <input type="text" formControlName="mobile" class="form-control" id="exampleInputPassword1">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Salary</label>
+            <input type="text" formControlName="salary" class="form-control" id="exampleInputPassword1">
+          </div>
+
+        </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Add</button>
+      </div>
+    </div>
+  </div>
+</div>
